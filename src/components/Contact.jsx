@@ -16,13 +16,13 @@ function Contact() {
                     <button type="submit" className="bg-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-600 transition">{t('contact.send')}</button>
                 </form>
                 <div className="mt-8 flex justify-center space-x-6">
-                    <a href="https://github.com/" className="text-teal-500 hover:text-teal-600 transition">
+                    <a href="https://github.com/RamazanOzerr" className="text-teal-500 hover:text-teal-600 transition">
                         <FaGithub size={48} />
                     </a>
-                    <a href="https://www.linkedin.com/in/" className="text-teal-500 hover:text-teal-600 transition">
+                    <a href="https://www.linkedin.com/in/ramazanozerr" className="text-teal-500 hover:text-teal-600 transition">
                         <FaLinkedin size={48} />
                     </a>
-                    <a href="https://www.instagram.com/berkay_bilimli/" className="text-teal-500 hover:text-teal-600 transition">
+                    <a href="https://www.instagram.com/ramzn_rz/" className="text-teal-500 hover:text-teal-600 transition">
                         <SiInstagram size={48} />
                     </a>
                 </div>
