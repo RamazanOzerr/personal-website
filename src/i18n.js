@@ -25,9 +25,9 @@ const resources = {
         location: 'Izmir, Türkiye',
         description: "I'm a software engineer focused on backend development, experienced with Java, Spring Boot, and microservices. While backend is my main interest, I also have hands-on experience with mobile apps using Android and Flutter. I enjoy building efficient, well-structured systems and continuously improving my skills.",
         skills: [
-          'Android, Java, Flutter, Spring Framework, Git, Kubernetes, Figma, Firebase, Unit Testing, MySQL, SQL, MS SQL, OOP, Data Structures & Algorithms, Problem Solving, Agile, Maven, HTML/CSS, NoSQL, JavaScript, Gradle, postgresql, mobile development, design pattern, API, Docker, Postman, REST API, PL/SQL',
-          'Languages: Turkish, English'
+          'Microservices, Spring Boot, Android, Java, Flutter'
         ],
+        languages: 'Turkish, English',
         interests: 'Interests: Backend Development, Mobile Apps, System Design, Continuous Learning'
       },
       education: {
@@ -148,9 +148,9 @@ const resources = {
         location: 'İzmir, Türkiye',
         description: 'Java, Spring Boot ve mikroservislerde deneyimli, backend odaklı bir yazılım mühendisiyim. Ayrıca Android ve Flutter ile mobil uygulama geliştirme tecrübem var. Verimli ve iyi yapılandırılmış sistemler kurmayı ve kendimi sürekli geliştirmeyi seviyorum.',
         skills: [
-          'Android, Java, Flutter, Spring Framework, Git, Kubernetes, Figma, Firebase, Unit Testing, MySQL, SQL, MS SQL, OOP, Veri Yapıları & Algoritmalar, Problem Çözme, Agile, Maven, HTML/CSS, NoSQL, JavaScript, Gradle, postgresql, mobil geliştirme, tasarım deseni, API, Docker, Postman, REST API, PL/SQL',
-          'Diller: Türkçe, İngilizce'
+          'Mikroservisler, Spring Boot, Android, Java, Flutter'
         ],
+        languages: 'Türkçe, İngilizce',
         interests: 'İlgi Alanları: Backend Geliştirme, Mobil Uygulamalar, Sistem Tasarımı, Sürekli Öğrenme'
       },
       education: {

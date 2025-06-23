@@ -1,7 +1,7 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { FaBriefcase } from 'react-icons/fa';
+import { FaLaptopCode } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 function Experience() {
@@ -17,7 +17,7 @@ function Experience() {
                         contentArrowStyle={{ borderRight: '7px solid  rgb(0, 150, 136)' }}
                         date={<span style={{ color: 'rgb(0, 150, 136)' }}>{t('experience.intern.date')}</span>}
                         iconStyle={{ background: 'rgb(0, 150, 136)', color: '#ffffff' }}
-                        icon={<FaBriefcase />}
+                        icon={<FaLaptopCode />}
                     >
                         <h3 className="vertical-timeline-element-title" style={{ color: '#ffffff' }}>{t('experience.intern.title')}</h3>
                         <h4 className="vertical-timeline-element-subtitle" style={{ color: '#ffffff' }}>{t('experience.intern.company')}</h4>
@@ -29,7 +29,7 @@ function Experience() {
                         contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                         date={<span style={{ color: 'rgb(33, 150, 243)' }}>{t('experience.parttime1.date')}</span>}
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#ffffff' }}
-                        icon={<FaBriefcase />}
+                        icon={<FaLaptopCode />}
                     >
                         <h3 className="vertical-timeline-element-title" style={{ color: '#ffffff' }}>{t('experience.parttime1.title')}</h3>
                         <h4 className="vertical-timeline-element-subtitle" style={{ color: '#ffffff' }}>{t('experience.parttime1.company')}</h4>

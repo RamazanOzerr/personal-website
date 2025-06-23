@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCertificate, FaUser, FaStar } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCertificate, FaUser, FaStar, FaCheckCircle, FaGlobe } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 function About() {
@@ -27,15 +27,15 @@ function About() {
                     </p>
                     <div className="flex flex-wrap gap-4 mb-4">
                         {t('about.skills', { returnObjects: true })[0] && (
-                            <span className="flex items-center text-gray-600"><FaStar className="mr-2 text-yellow-500" /> {t('about.skills', { returnObjects: true })[0]}</span>
-                        )}
-                        {t('about.skills', { returnObjects: true })[1] && (
-                            <span className="flex items-center text-gray-600"><FaStar className="mr-2 text-yellow-500" /> {t('about.skills', { returnObjects: true })[1]}</span>
+                            <span className="flex items-center text-gray-600"><FaCheckCircle className="mr-2 text-green-500" /> {t('about.skills', { returnObjects: true })[0]}</span>
                         )}
                     </div>
-                    <div className="flex flex-wrap gap-4">
-                        <span className="flex items-center text-gray-600"><FaStar className="mr-2 text-yellow-500" /> {t('about.interests')}</span>
-                    </div>
+                    {/* Languages Section */}
+                    {t('about.languages') && (
+                        <div className="flex flex-wrap gap-4 mb-4">
+                            <span className="flex items-center text-gray-600"><FaGlobe className="mr-2 text-blue-500" /> {t('about.languages')}</span>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
