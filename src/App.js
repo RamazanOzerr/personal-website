@@ -8,7 +8,6 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import Certifications from './components/Certifications';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -25,7 +24,6 @@ function App() {
                         <Experience />
                         <Projects />
                         <Skills />
-                        <Certifications />
                         <Contact />
                     </>
                 } />

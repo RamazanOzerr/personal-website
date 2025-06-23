@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 function About() {
     const { t } = useTranslation();
     return (
-        <section id="about" className="py-20 bg-gradient-to-r from-teal-50 to-blue-50">
+        <section id="about" className="py-20" style={{ backgroundColor: '#fafafa' }}>
             <div className="container mx-auto flex flex-col md:flex-row items-center md:space-x-12 px-6">
                 {/* Profile Image Placeholder */}
                 <div className="flex-shrink-0 mb-8 md:mb-0">

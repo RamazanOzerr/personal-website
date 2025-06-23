@@ -121,7 +121,9 @@ const resources = {
         javascript: 'JavaScript',
         typescript: 'TypeScript',
         htmlcss: 'HTML/CSS',
-        sql: 'SQL'
+        sql: 'SQL',
+        kotlin: 'Kotlin',
+        dart: 'Dart',
       },
     }
   },
@@ -244,7 +246,9 @@ const resources = {
         javascript: 'JavaScript',
         typescript: 'TypeScript',
         htmlcss: 'HTML/CSS',
-        sql: 'SQL'
+        sql: 'SQL',
+        kotlin: 'Kotlin',
+        dart: 'Dart',
       },
     }
   }
