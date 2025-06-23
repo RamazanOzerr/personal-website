@@ -21,9 +21,10 @@ function Education() {
     ];
 
     return (
-        <section id="education" className="py-20 bg-gray-100" ref={ref}>
+        <section id="education" className="py-20" style={{ background: '#121212' }} ref={ref}>
             <motion.h2 
-                className="text-3xl font-bold text-teal-600 text-center"
+                className="text-3xl font-bold text-center"
+                style={{ color: '#1db954' }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1 }}
@@ -39,15 +40,16 @@ function Education() {
                     {education.map((edu, index) => (
                         <motion.div 
                             key={index} 
-                            className="bg-white shadow-md p-6 rounded-lg mb-6"
+                            className="shadow-md p-6 rounded-lg mb-6"
+                            style={{ background: '#212121', color: '#b3b3b3', border: '1px solid #535353' }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                         >
-                            <h3 className="text-lg font-semibold text-teal-500">{edu.degree}</h3>
-                            <h4 className="text-sm text-gray-600">{edu.institution}</h4>
-                            <p className="text-sm text-gray-500 mb-2">{edu.period}</p>
-                            <ul className="list-disc list-inside">
+                            <h3 className="text-lg font-semibold" style={{ color: '#1db954' }}>{edu.degree}</h3>
+                            <h4 className="text-sm" style={{ color: '#b3b3b3' }}>{edu.institution}</h4>
+                            <p className="text-sm mb-2" style={{ color: '#b3b3b3' }}>{edu.period}</p>
+                            <ul className="list-disc list-inside" style={{ color: '#b3b3b3' }}>
                                 {edu.details.map((detail, i) => (
                                     <li key={i}>{detail}</li>
                                 ))}

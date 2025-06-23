@@ -38,11 +38,12 @@ function Navbar() {
     };
 
     return (
-        <nav className="bg-teal-600 fixed w-full z-10 top-0 shadow-lg">
+        <nav className="fixed w-full z-10 top-0 shadow-lg" style={{ background: '#212121', borderBottom: '1px solid #535353' }}>
             <div className="container mx-auto flex items-center justify-between p-4">
                 <NavLink 
                     to="/" 
-                    className="text-white text-2xl font-bold cursor-pointer"
+                    className="text-2xl font-bold cursor-pointer"
+                    style={{ color: '#1db954' }}
                     onClick={() => handleNavClick('/', 'home')}
                 >
                     Ramazan Ozer
@@ -54,7 +55,10 @@ function Navbar() {
                                 <NavLink 
                                     key={index} 
                                     to={item.route} 
-                                    className="text-white text-lg hover:text-teal-200 transition cursor-pointer"
+                                    className="text-lg transition cursor-pointer"
+                                    style={{ color: '#b3b3b3' }}
+                                    onMouseOver={e => e.currentTarget.style.color = '#1db954'}
+                                    onMouseOut={e => e.currentTarget.style.color = '#b3b3b3'}
                                     onClick={toggleMenu}
                                 >
                                     {item.name}
@@ -62,7 +66,10 @@ function Navbar() {
                             ) : (
                                 <span 
                                     key={index} 
-                                    className="text-white text-lg hover:text-teal-200 transition cursor-pointer"
+                                    className="text-lg transition cursor-pointer"
+                                    style={{ color: '#b3b3b3' }}
+                                    onMouseOver={e => e.currentTarget.style.color = '#1db954'}
+                                    onMouseOut={e => e.currentTarget.style.color = '#b3b3b3'}
                                     onClick={() => handleNavClick(item.route, item.sectionId)}
                                 >
                                     {item.name}
@@ -72,20 +79,23 @@ function Navbar() {
                         {/* Language Switcher - Desktop only */}
                         <button
                             onClick={handleLanguageSwitch}
-                            className="ml-4 px-3 py-1 bg-white text-teal-600 rounded hover:bg-teal-100 transition text-sm font-semibold"
+                            className="ml-4 px-3 py-1 rounded transition text-sm font-semibold"
+                            style={{ background: '#1db954', color: '#212121' }}
+                            onMouseOver={e => e.currentTarget.style.background = '#b3b3b3'}
+                            onMouseOut={e => e.currentTarget.style.background = '#1db954'}
                         >
-                            {i18n.language === 'tr' ? 'EN' : 'TR'}
+                            {i18n.language === 'en' ? 'TR' : 'EN'}
                         </button>
                     </div>
                     {/* Hamburger + Language Switcher for Mobile only */}
                     <div className="md:hidden flex items-center space-x-2 ml-2">
                         <button
                             onClick={handleLanguageSwitch}
-                            className="px-3 py-1 bg-white text-teal-600 rounded hover:bg-teal-100 transition text-sm font-semibold"
+                            className="px-3 py-1 bg-primary text-black rounded hover:bg-green-400 transition text-sm font-semibold"
                         >
-                            {i18n.language === 'tr' ? 'EN' : 'TR'}
+                            {i18n.language === 'en' ? 'TR' : 'EN'}
                         </button>
-                        <button onClick={toggleMenu} className="text-white focus:outline-none">
+                        <button onClick={toggleMenu} className="text-primary focus:outline-none">
                             {isOpen ? (
                                 <XIcon className="h-6 w-6" />
                             ) : (
@@ -98,14 +108,17 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-teal-600">
+                <div className="md:hidden" style={{ background: '#212121' }}>
                     <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
                         {navItems.map((item, index) => (
                             item.route === '/blog' ? (
                                 <NavLink 
                                     key={index} 
                                     to={item.route} 
-                                    className="block text-white text-lg hover:text-teal-200 transition cursor-pointer"
+                                    className="block text-lg transition cursor-pointer"
+                                    style={{ color: '#b3b3b3' }}
+                                    onMouseOver={e => e.currentTarget.style.color = '#1db954'}
+                                    onMouseOut={e => e.currentTarget.style.color = '#b3b3b3'}
                                     onClick={toggleMenu}
                                 >
                                     {item.name}
@@ -113,7 +126,10 @@ function Navbar() {
                             ) : (
                                 <span 
                                     key={index} 
-                                    className="block text-white text-lg hover:text-teal-200 transition cursor-pointer"
+                                    className="block text-lg transition cursor-pointer"
+                                    style={{ color: '#b3b3b3' }}
+                                    onMouseOver={e => e.currentTarget.style.color = '#1db954'}
+                                    onMouseOut={e => e.currentTarget.style.color = '#b3b3b3'}
                                     onClick={() => handleNavClick(item.route, item.sectionId)}
                                 >
                                     {item.name}

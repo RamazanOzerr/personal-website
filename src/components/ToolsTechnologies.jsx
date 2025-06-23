@@ -1,47 +1,62 @@
-import React from 'react';
-import { FaReact, FaDocker, FaAws } from 'react-icons/fa';
-import { SiSpringboot, SiKubernetes, SiMysql, SiPostgresql,SiMicrosoftsqlserver,SiVuedotjs, SiRedis, SiFirebase, SiAndroidstudio } from 'react-icons/si';
+import React, { useState } from 'react';
+import { FaReact, FaDocker } from 'react-icons/fa';
+import { SiSpringboot, SiKubernetes, SiMysql, SiMicrosoftsqlserver, SiFirebase, SiAndroidstudio, SiFlutter, SiFigma, SiPostman } from 'react-icons/si';
 import { DiGit } from 'react-icons/di';
+import { MdStorage } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 function ToolsTechnologies() {
     const { t } = useTranslation();
+    const [hovered, setHovered] = useState(null);
+    const green = '#1db954'; // Spotify green
+    const darkGray = '#212121';
+    const sectionBg = '#121212';
+    const borderGray = '#535353';
+    const textGray = '#b3b3b3';
     const tools = [
-        { name: t('tools.spring'), icon: <SiSpringboot size={30} color="#6DB33F" /> },
-        { name: t('tools.react'), icon: <FaReact size={30} color="#61DAFB" /> },
-        { name: t('tools.docker'), icon: <FaDocker size={30} color="#2496ED" /> },
-        { name: t('tools.kubernetes'), icon: <SiKubernetes size={30} color="#326CE5" /> },
-        { name: t('tools.git'), icon: <DiGit size={30} color="#F05032" /> },
-        { name: t('tools.vue'), icon: <SiVuedotjs size={30} color="#6DB33F" /> },
-        { name: t('tools.android'), icon: <SiAndroidstudio size={30} color="#3DDC84" /> },
-        { name: t('tools.mysql'), icon: <SiMysql size={30} color="#4479A1" /> },
-        { name: t('tools.postgresql'), icon: <SiPostgresql size={30} color="#336791" /> },
-        { name: t('tools.mssql'), icon: <SiMicrosoftsqlserver size={30} color="#336791" /> },
-        { name: t('tools.firebase'), icon: <SiFirebase size={30} color="#FFCA28" /> },
-        { name: t('tools.aws'), icon: <FaAws size={30} color="#FF9900" /> },
-        { name: t('tools.redis'), icon: <SiRedis size={30} color="#DC382D" /> },
+        { name: 'Spring Boot', icon: (color) => <SiSpringboot size={30} color={color} /> },
+        { name: 'React.js', icon: (color) => <FaReact size={30} color={color} /> },
+        { name: 'Docker', icon: (color) => <FaDocker size={30} color={color} /> },
+        { name: 'Kubernetes', icon: (color) => <SiKubernetes size={30} color={color} /> },
+        { name: 'Git', icon: (color) => <DiGit size={30} color={color} /> },
+        { name: 'MySQL', icon: (color) => <SiMysql size={30} color={color} /> },
+        { name: 'MsSQL', icon: (color) => <SiMicrosoftsqlserver size={30} color={color} /> },
+        { name: 'PL/SQL', icon: (color) => <MdStorage size={30} color={color} /> },
+        { name: 'Postman', icon: (color) => <SiPostman size={30} color={color} /> },
+        { name: 'Firebase', icon: (color) => <SiFirebase size={30} color={color} /> },
+        { name: 'Android Studio', icon: (color) => <SiAndroidstudio size={30} color={color} /> },
+        { name: 'Flutter', icon: (color) => <SiFlutter size={30} color={color} /> },
+        { name: 'Figma', icon: (color) => <SiFigma size={30} color={color} /> },
     ];
 
     return (
-        <section id="tools-technologies" className="py-20 bg-gray-100">
+        <section id="tools-technologies" className="py-20" style={{ background: sectionBg }}>
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-teal-600 text-center">{t('tools.title')}</h2>
+                <h2 className="text-3xl font-bold text-center" style={{ color: green }}>{t('tools.title')}</h2>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 mr-10 ml-10">
                     {tools.map((tool, index) => (
                         <motion.div
                             key={index}
-                            className="text-center bg-white p-4 rounded-lg shadow-md"
+                            className="text-center p-4 rounded-lg shadow-md"
+                            style={{
+                                background: darkGray,
+                                border: `1px solid ${borderGray}`,
+                                color: textGray,
+                            }}
                             whileHover={{
                                 scale: 1.1,
-                                backgroundColor: '#E6FFFA',
+                                backgroundColor: green,
+                                color: darkGray,
                                 transition: { duration: 0.3 },
                             }}
+                            onMouseEnter={() => setHovered(index)}
+                            onMouseLeave={() => setHovered(null)}
                         >
                             <div className="flex justify-center mb-2">
-                                {tool.icon}
+                                {tool.icon(hovered === index ? darkGray : green)}
                             </div>
-                            <p className="text-lg font-medium">{tool.name}</p>
+                            <p className="text-lg font-medium" style={{ color: textGray }}>{tool.name}</p>
                         </motion.div>
                     ))}
                 </div>
