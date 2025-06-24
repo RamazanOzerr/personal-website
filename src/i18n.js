@@ -108,11 +108,7 @@ const resources = {
         ]
       },
       contact: {
-        title: 'Contact Me',
-        name: 'Your Name',
-        email: 'Your Email',
-        message: 'Your Message',
-        send: 'Send Message'
+        title: 'Contact Me'
       },
       footer: {
         copyright: 'Ramazan Ozer. All rights reserved.',
@@ -254,11 +250,7 @@ const resources = {
         ]
       },
       contact: {
-        title: 'İletişim',
-        name: 'Adınız',
-        email: 'E-posta Adresiniz',
-        message: 'Mesajınız',
-        send: 'Mesaj Gönder'
+        title: 'Bana Ulaşın'
       },
       footer: {
         copyright: 'Ramazan Özer. Tüm hakları saklıdır.',

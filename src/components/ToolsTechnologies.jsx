@@ -42,7 +42,7 @@ function ToolsTechnologies() {
     ];
 
     return (
-        <section id="tools-technologies" className="py-20" style={{ background: sectionBg }}>
+        <section id="tools-technologies" className="pt-10 pb-20" style={{ background: sectionBg }}>
             <div className="container mx-auto">
                 <h2 className="text-3xl font-bold text-center" style={{ color: green }}>{t('tools.title')}</h2>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 mr-10 ml-10">
