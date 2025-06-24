@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCertificate, FaUser, FaStar, FaCheckCircle, FaGlobe } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaCertificate, FaUser, FaStar, FaCheckCircle, FaGlobe } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 function About() {
@@ -19,7 +19,6 @@ function About() {
                     <p className="text-lg mb-4">{t('about.role')}</p>
                     <div className="flex flex-wrap gap-4 mb-4">
                         <span className="flex items-center"><FaEnvelope className="mr-2" style={{ color: '#1db954' }} /> ozerramazan991@gmail.com</span>
-                        <span className="flex items-center"><FaPhone className="mr-2" style={{ color: '#1db954' }} /> +90 531 722 65 48</span>
                         <span className="flex items-center"><FaMapMarkerAlt className="mr-2" style={{ color: '#1db954' }} /> {t('about.location')}</span>
                     </div>
                     <p className="mb-4">

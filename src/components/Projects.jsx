@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaGithub, FaAndroid, FaCloud, FaBook, FaUsers } from 'react-icons/fa';
 import { SiSpringboot, SiPostgresql, SiRedis, SiReact, SiVueDotJs, SiMysql, SiFirebase } from 'react-icons/si';
 import { motion } from 'framer-motion';
@@ -47,28 +47,69 @@ const projects = [
 function Projects() {
   const { t } = useTranslation();
   const projects = t('projects.items', { returnObjects: true });
+  const [hovered, setHovered] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const green = '#1db954';
+  const darkGray = '#212121';
+  const borderGray = '#535353';
+  const textGray = '#b3b3b3';
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleInteraction = (idx) => {
+    if (isTouchDevice) {
+      setHovered(hovered === idx ? null : idx);
+    } else {
+      setHovered(idx);
+    }
+  };
+
   return (
     <section id="projects" className="py-20" style={{ background: '#121212' }}>
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center" style={{ color: '#1db954' }}>{t('navbar.projects')}</h2>
+        <h2 className="text-3xl font-bold text-center" style={{ color: green }}>{t('navbar.projects')}</h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-6">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              className="rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition-shadow"
-              style={{ background: '#212121', border: '1px solid #535353', color: '#b3b3b3' }}
+              className="rounded-xl shadow-lg p-6 flex flex-col justify-between"
+              style={{ 
+                background: darkGray, 
+                border: `1px solid ${borderGray}`, 
+                color: textGray,
+                cursor: 'pointer'
+              }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
+              whileHover={!isTouchDevice ? {
+                scale: 1.05,
+                backgroundColor: green,
+                transition: { duration: 0.3 },
+              } : {}}
+              animate={hovered === idx ? {
+                scale: 1.05,
+                backgroundColor: green,
+                transition: { duration: 0.3 },
+              } : {
+                scale: 1,
+                backgroundColor: darkGray,
+                transition: { duration: 0.3 },
+              }}
+              onClick={() => isTouchDevice && handleInteraction(idx)}
+              onMouseEnter={() => !isTouchDevice && handleInteraction(idx)}
+              onMouseLeave={() => !isTouchDevice && setHovered(null)}
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold" style={{ color: '#1db954' }}>{project.title}</h3>
-                  <span className="text-xs" style={{ color: '#b3b3b3' }}>{project.date}</span>
+                  <h3 className="text-xl font-semibold" style={{ color: hovered === idx ? '#000000' : green }}>{project.title}</h3>
+                  <span className="text-xs" style={{ color: hovered === idx ? '#000000' : textGray }}>{project.date}</span>
                 </div>
-                <div className="text-sm mb-2" style={{ color: '#b3b3b3' }}>{project.location}</div>
-                <ul className="list-disc list-inside mb-4 space-y-1" style={{ color: '#b3b3b3' }}>
+                <div className="text-sm mb-2" style={{ color: hovered === idx ? '#000000' : textGray }}>{project.location}</div>
+                <ul className="list-disc list-inside mb-4 space-y-1" style={{ color: hovered === idx ? '#000000' : textGray }}>
                   {project.description.map((desc, i) => (
                     <li key={i}>{desc}</li>
                   ))}
@@ -76,16 +117,34 @@ function Projects() {
               </div>
               <div className="flex items-center justify-between mt-4">
                 <div className="flex space-x-2">
-                  {project.tech && project.tech.map && project.tech.map((icon, i) => React.cloneElement(icon, { color: '#1db954', key: i }))}
+                  {project.tech && project.tech.map && project.tech.map((icon, i) => React.cloneElement(icon, { color: hovered === idx ? '#000000' : green, key: i }))}
                 </div>
                 <div className="flex space-x-2">
                   {project.repo && (
-                    <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex items-center" style={{ color: '#1db954' }}>
-                      <FaGithub size={22} className="mr-1" color="#1db954" /> {t('projects.repo')}
+                    <a 
+                      href={project.repo} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center" 
+                      style={{ color: hovered === idx ? '#000000' : green }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FaGithub size={22} className="mr-1" color={hovered === idx ? '#000000' : green} /> {t('projects.repo')}
                     </a>
                   )}
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="ml-2 px-3 py-1 rounded-md font-medium transition text-sm" style={{ background: '#1db954', color: '#212121' }} onMouseOver={e => { e.currentTarget.style.background = '#b3b3b3'; e.currentTarget.style.color = '#212121'; }} onMouseOut={e => { e.currentTarget.style.background = '#1db954'; e.currentTarget.style.color = '#212121'; }}>
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="ml-2 px-3 py-1 rounded-md font-medium transition text-sm"
+                      style={{ 
+                        background: hovered === idx ? '#000000' : green, 
+                        color: hovered === idx ? green : '#000000',
+                        border: hovered === idx ? `1px solid #000000` : 'none'
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {t('projects.demo')}
                     </a>
                   )}

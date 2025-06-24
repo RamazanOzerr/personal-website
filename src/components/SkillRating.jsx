@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { FaJava, FaPython, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
 import { SiKotlin, SiDart } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
-import Lottie from 'lottie-react';
 
 function SkillRating() {
     const { ref, inView } = useInView({

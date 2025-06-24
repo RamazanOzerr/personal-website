@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaReact, FaDocker } from 'react-icons/fa';
 import { SiSpringboot, SiKubernetes, SiMysql, SiMicrosoftsqlserver, SiFirebase, SiAndroidstudio, SiFlutter, SiFigma, SiPostman } from 'react-icons/si';
 import { DiGit } from 'react-icons/di';
@@ -9,11 +9,22 @@ import { useTranslation } from 'react-i18next';
 function ToolsTechnologies() {
     const { t } = useTranslation();
     const [hovered, setHovered] = useState(null);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
     const green = '#1db954'; // Spotify green
-    const darkGray = '#212121';
+    const black = '#000000';
     const sectionBg = '#121212';
     const borderGray = '#535353';
     const textGray = '#b3b3b3';
+
+    useEffect(() => {
+        setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    }, []);
+
+    const handleTouchStart = (index, e) => {
+        e.preventDefault();
+        setHovered(current => current === index ? null : index);
+    };
+
     const tools = [
         { name: 'Spring Boot', icon: (color) => <SiSpringboot size={30} color={color} /> },
         { name: 'React.js', icon: (color) => <FaReact size={30} color={color} /> },
@@ -40,23 +51,27 @@ function ToolsTechnologies() {
                             key={index}
                             className="text-center p-4 rounded-lg shadow-md"
                             style={{
-                                background: darkGray,
+                                background: hovered === index ? green : black,
                                 border: `1px solid ${borderGray}`,
-                                color: textGray,
+                                color: hovered === index ? black : textGray,
+                                cursor: 'pointer',
                             }}
-                            whileHover={{
+                            whileHover={!isTouchDevice ? {
                                 scale: 1.1,
                                 backgroundColor: green,
-                                color: darkGray,
+                                color: black,
                                 transition: { duration: 0.3 },
-                            }}
-                            onMouseEnter={() => setHovered(index)}
-                            onMouseLeave={() => setHovered(null)}
+                            } : {}}
+                            onMouseEnter={() => !isTouchDevice && setHovered(index)}
+                            onMouseLeave={() => !isTouchDevice && setHovered(null)}
+                            onTouchStart={(e) => isTouchDevice && handleTouchStart(index, e)}
                         >
                             <div className="flex justify-center mb-2">
-                                {tool.icon(hovered === index ? darkGray : green)}
+                                {tool.icon(hovered === index ? black : green)}
                             </div>
-                            <p className="text-lg font-medium" style={{ color: textGray }}>{tool.name}</p>
+                            <p className="text-lg font-medium" style={{ color: hovered === index ? black : textGray }}>
+                                {tool.name}
+                            </p>
                         </motion.div>
                     ))}
                 </div>

@@ -63,7 +63,7 @@ const resources = {
               'A full-stack Android app for exam preparation, featuring microservices, AI-powered recommendations, and interactive UI for university students.'
             ],
             tech: [],
-            demo: null
+            demo: 'https://youtu.be/udNuJvmDvvk?si=mrgfKRwcJdEEA4na'
           },
           {
             title: 'Conference Management System',
@@ -73,7 +73,7 @@ const resources = {
               'A web-based system for managing conferences, including paper submission, review, and document storage, built with Java Spring Boot and MySQL.'
             ],
             tech: [],
-            repo: null
+            repo: 'https://github.com/RamazanOzerr/Conference_Management_System'
           },
           {
             title: 'Chat Me',
@@ -83,7 +83,27 @@ const resources = {
               'An Android chat app with real-time messaging, authentication, and profile management, developed using Java and Firebase.'
             ],
             tech: [],
-            repo: null
+            repo: 'https://github.com/ramazanozerr/android-chat-app'
+          },
+          {
+            title: 'Little Digital Library',
+            location: 'Izmir, Turkey',
+            date: 'February 2023 - March 2023',
+            description: [
+              'Android based digital library application. Spring Boot, Hibernate, Retrofit, MySQL and Firebase services'
+            ],
+            tech: [],
+            repo: 'https://github.com/RamazanOzerr/Library-Project-Using-Spring-and-Android'
+          },
+          {
+            title: 'Swift Notes',
+            location: 'Izmir, Turkey',
+            date: 'April 2024',
+            description: [
+              'Notes App is a simple iOS application built with SwiftUI and SwiftData for managing and organizing notes'
+            ],
+            tech: [],
+            repo: 'https://github.com/RamazanOzerr/Notes-SwiftData'
           }
         ]
       },
@@ -120,7 +140,8 @@ const resources = {
         python: 'Python',
         javascript: 'JavaScript',
         typescript: 'TypeScript',
-        htmlcss: 'HTML/CSS',
+        html: 'HTML',
+        css: 'CSS',
         sql: 'SQL',
         kotlin: 'Kotlin',
         dart: 'Dart',
@@ -188,7 +209,7 @@ const resources = {
               'Üniversite öğrencileri için sınava hazırlıkta mikroservisler, yapay zeka destekli öneriler ve etkileşimli arayüz sunan tam kapsamlı bir Android uygulaması.'
             ],
             tech: [],
-            demo: null
+            demo: 'https://youtu.be/udNuJvmDvvk?si=mrgfKRwcJdEEA4na'
           },
           {
             title: 'Konferans Yönetim Sistemi',
@@ -198,7 +219,7 @@ const resources = {
               'Java Spring Boot ve MySQL ile geliştirilen, makale gönderimi, değerlendirme ve belge yönetimi sunan web tabanlı konferans yönetim sistemi.'
             ],
             tech: [],
-            repo: null
+            repo: 'https://github.com/RamazanOzerr/Conference_Management_System'
           },
           {
             title: 'Chat Me',
@@ -208,7 +229,27 @@ const resources = {
               'Java ve Firebase ile geliştirilen, gerçek zamanlı mesajlaşma, kimlik doğrulama ve profil yönetimi sunan Android sohbet uygulaması.'
             ],
             tech: [],
-            repo: null
+            repo: 'https://github.com/ramazanozerr/android-chat-app'
+          },
+          {
+            title: 'Little Digital Library',
+            location: 'İzmir, Türkiye',
+            date: 'Şubat 2023 - Mart 2023',
+            description: [
+              'Android tabanlı dijital kütüphane uygulaması. Spring Boot, Hibernate, Retrofit, MySQL ve Firebase servisleri kullanılmıştır.'
+            ],
+            tech: [],
+            repo: 'https://github.com/RamazanOzerr/Library-Project-Using-Spring-and-Android'
+          },
+          {
+            title: 'Swift Notes',
+            location: 'İzmir, Türkiye',
+            date: 'Nisan 2024',
+            description: [
+              'SwiftUI ve SwiftData kullanılarak geliştirilmiş, not yönetimi ve organizasyonu için basit bir iOS uygulaması.'
+            ],
+            tech: [],
+            repo: 'https://github.com/RamazanOzerr/Notes-SwiftData'
           }
         ]
       },
@@ -245,7 +286,8 @@ const resources = {
         python: 'Python',
         javascript: 'JavaScript',
         typescript: 'TypeScript',
-        htmlcss: 'HTML/CSS',
+        html: 'HTML',
+        css: 'CSS',
         sql: 'SQL',
         kotlin: 'Kotlin',
         dart: 'Dart',
